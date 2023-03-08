@@ -130,3 +130,6 @@ dmypy.json
 
 # Web pages to parse
 *.html
+
+# Output files
+*output.txt
