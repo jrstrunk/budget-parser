@@ -27,6 +27,7 @@ categories = {
         "MONTE CARLO PIZZA",
         "THE FRESH MARKET",
         "WHOLEFDS",
+        "Tst* lunas",
     ],
     "Health": [
         "CVS/PHARM",
@@ -35,15 +36,16 @@ categories = {
         "WWW.CLEARLYFILTERED.CO",
         "LEXINGTON ENDODONTICS",
         "Zion Health",
+        "Ws mywellspan ext",
     ],
     "Utilities": [
         "COMCAST", 
         "ENTEGRO LLC", 
-        "Buttonwood",
         "FIRSTENERGY",
     ],
     "Housing": [
         "BUTTONWOOD GARDENS",
+        "Buttonwood",
         "Qbe insurance",
         "airdoctor",
     ],
@@ -65,6 +67,9 @@ categories = {
         "MARATHON PETRO",
         "Speedway",
         "Yorkshire garage",
+        "Wawa",
+        "SAM'S FUEL",
+        "Cp penndot york",
     ],
     "Shopping": [
         "PRICERITE YORK", 
@@ -103,6 +108,7 @@ categories = {
     ],
     '"Vacation, Holiday, Events, and Traveling"': [
         "Leewaysvcctrviolatione",
+        "QUALITY INN",
     ],
     "Baby": [
         "rebelstork",
@@ -119,12 +125,14 @@ categories = {
         "WALMART",
         "Wal-Mart",
     ],
+    "Income": [
+        "LIBERTY UNIVER",
+        "NAKUPUNA SOLUTIO",
+    ]
 }
 
 exclude_list = [
     "TD AMERITRADE", 
-    "LIBERTY UNIVER",
-    "NAKUPUNA SOLUTIO",
     "2022 Roth IRA Contribution Vault",
     "SoFi Credit Card",
     "Interest earned",
@@ -144,4 +152,6 @@ exclude_list = [
     "DISCOVER",
     "VENMO", 
     "Auto-pay thank you",
+    "WELLS FARGO",
+    "From savings",
 ]
