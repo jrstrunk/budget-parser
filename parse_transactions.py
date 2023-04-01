@@ -26,18 +26,16 @@ categorized_transactions = parsers.categorize_transactions(all_transactions)
 
 sorted_transactions = parsers.sort_transactions(categorized_transactions)
 
+month = input(
+    "Please enter the numerical value for " 
+    + "the month which would you like transactions for:"
+)
+
 with open("transaction_output.txt", "w") as f:
-    for trans in sorted_transactions:
+    for trans in [t for t in sorted_transactions if month in t.split("/")[0]]:
         print(trans, file=f)
 
-_ = input("Fix any output transaction category and enter any key to continue")
-
-with open("transaction_output.txt") as f:
-    sorted_transactions = f.readlines()
-
-cat_totals = parsers.get_transaction_category_totals(sorted_transactions)
-
-with open("cat_totals_output.txt", "w") as f:
-    for month in cat_totals:
-        print(month, file=f)
-        print(*[f"{c}: {t}," for c, t in cat_totals[month].items()], file=f)
+print(
+    "Finishing parsing transactions!",
+    "They are listed in transaction_output.txt"
+)
