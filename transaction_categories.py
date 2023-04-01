@@ -70,8 +70,9 @@ categories = {
         "Insurance": [
             "Qbe insurance",
         ],
-        "Rent / Mortgage": [
+        "Rent & Mortgage": [
             "BUTTONWOOD GARDENS",
+            "Buttonwood Oper",
         ]
     },
 
