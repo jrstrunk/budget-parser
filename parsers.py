@@ -45,11 +45,13 @@ def parse_sofi_credit_transactions(raw_trans_html: str):
 
     # parse the whole page down to the needed tables
     for tgroup in transaction_groups:
-        trans_details = tgroup.split('<p ')
+        trans_details = tgroup.split('<p')
         del trans_details[0]
         trans_details = [t.split(">")[1] for t in trans_details]
         trans_details = [re.sub("</p", "", t) for t in trans_details]
         trans_details = [re.sub(",", "", t) for t in trans_details]
+        trans_details = [re.sub("\n", "", t) for t in trans_details]
+        trans_details = [t.strip() for t in trans_details]
 
         # spending is positive in the credit transactions, so make all
         # negative transactions positive and all positive negative that way
