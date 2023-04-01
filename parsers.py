@@ -112,12 +112,15 @@ def categorize_transactions(trans: list):
         # add a category for each transaction, if a transaction has no 
         # known category, it is assumed to have a category of Misc
         category = "Misc"
+        sub_category = "Misc"
         for cat in categories:
-            for title in categories[cat]:
-                if title.lower() in tran.lower():
-                    category = cat
-                    break
-        tran += "," + category
+            for sub_cat in categories[cat]:
+                for title in categories[cat][sub_cat]:
+                    if title.lower() in tran.lower():
+                        category = cat
+                        sub_category = sub_cat
+                        break
+        tran += "," + category + "," + sub_category
         cat_trans.append(tran)
     return cat_trans
 
