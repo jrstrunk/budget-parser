@@ -32,7 +32,8 @@ month = input(
 )
 
 with open("transaction_output.txt", "w") as f:
-    for trans in [t for t in sorted_transactions if month in t.split("/")[0]]:
+    for trans in [t for t in sorted_transactions 
+            if month in t.split(",")[1].split("/")[0]]:
         print(trans, file=f)
 
 print(
