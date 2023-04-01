@@ -3,7 +3,8 @@ from transaction_categories import categories, exclude_list
 from datetime import datetime
 
 def parse_sofi_banking_transactions(raw_trans_html: str):
-    '''parses the transaction log in sofi and outputs it in a csv format. the raw_trans_html string should start with "<tr data-mjs-value="'''
+    '''parses the transaction log in sofi and outputs it in a csv format. 
+        the raw_trans_html string should start with "<tr data-mjs-value="'''
     formatted_transactions = []
 
     # parse the whole page down to the needed tables
@@ -17,20 +18,25 @@ def parse_sofi_banking_transactions(raw_trans_html: str):
         del split_items[-1]
 
         for item in split_items:
-            samp_date = re.findall('<title>.+</title>', item)
-            samp_date = re.sub('<\/*title>', '', samp_date[0])
-            samp_date = re.sub('Transaction. Date: ', '', samp_date)
-            samp_date = re.sub(',', '', samp_date)
-            samp_date = re.sub('. Description: ', ',', samp_date)
-            samp_date = re.sub('\ *. Amount: ', ',', samp_date)
-            samp_date = samp_date[:-1]
+            trans = re.findall('<title>.+</title>', item)
+            trans = re.sub('<\/*title>', '', trans[0])
+            trans = re.sub('Transaction. Date: ', '', trans)
+            trans = re.sub(',', '', trans)
+            trans = re.sub('. Description: ', ',', trans)
+            trans = re.sub('\ *. Amount: ', ',', trans)
+            trans = trans[:-1]
 
             # format the date
-            split_item = samp_date.split(",")
-            split_item[0] = datetime.strptime(split_item[0], "%B %d %Y").strftime('%m/%d/%Y')
-            samp_date = ",".join(split_item)
+            split_trans = trans.split(",")
+            split_trans[0] = datetime\
+                .strptime(split_trans[0], "%B %d %Y")\
+                .strftime('%m/%d/%Y')
 
-            formatted_transactions.append(samp_date)
+            formatted_transaction = split_trans[0].split('/')[2] \
+                + split_trans[0].split('/')[0] + "," \
+                + ",".join(split_trans)
+
+            formatted_transactions.append(formatted_transaction)
     return formatted_transactions
 
 def parse_sofi_credit_transactions(raw_trans_html: str):
@@ -61,7 +67,9 @@ def parse_sofi_credit_transactions(raw_trans_html: str):
         else:
             trans_details[1] = "-" + trans_details[1]
 
-        trans_details = f"{trans_details[2]},{trans_details[0]},{trans_details[1]}"
+        trans_details = trans_details[2].split('/')[2] \
+            + trans_details[2].split('/')[0] + "," \
+            +f"{trans_details[2]},{trans_details[0]},{trans_details[1]}"
             
         formatted_transactions.append(trans_details)
     return formatted_transactions
@@ -92,7 +100,11 @@ def parse_discover_transactions(raw_trans_html: str):
         else:
             val = "-" + val
         
-        formatted_transactions.append(f"{date},{desc},{val}")
+        formatted_transaction = date.split('/')[2] \
+            + date.split('/')[0] + "," \
+            + f"{date},{desc},{val}"
+
+        formatted_transactions.append(formatted_transaction)
     return formatted_transactions
 
 def categorize_transactions(trans: list):
@@ -129,9 +141,9 @@ def sort_transactions(trans: list):
         trans, 
         key=lambda x: 
             datetime(
-                int(x.split(",")[0].split("/")[2]), 
-                int(x.split(",")[0].split("/")[0]), 
-                int(x.split(",")[0].split("/")[1])
+                int(x.split(",")[1].split("/")[2]), 
+                int(x.split(",")[1].split("/")[0]), 
+                int(x.split(",")[1].split("/")[1])
             ), 
         reverse=True
     )
