@@ -181,6 +181,28 @@ categories = {
         ]
     },
 
+    "Income": {
+        "John's Wages": [
+            "LIBERTY UNIVER",
+            "NAKUPUNA SOLUTIO",
+        ],
+    },
+
+    "Business": {
+        "Investment Business": [
+            "Digitalocean.com",
+        ],
+    },
+
+    "Services": {
+        "Privacy Software": [
+            "Anonaddy",
+        ],
+        "Creative Software": [
+            "CANVA",
+        ]
+    },
+
     "Misc": {
         "Misc": [
             "Check Paid",
@@ -194,8 +216,6 @@ categories = {
 
 exclude_list = [
     "TD AMERITRADE", 
-    "LIBERTY UNIVER",
-    "NAKUPUNA SOLUTIO",
     "Roth IRA Contribution Vault",
     "SoFi Credit Card",
     "Interest earned",
@@ -210,7 +230,6 @@ exclude_list = [
     "SOFI CREDIT CORP",
     "Payment - thank you",
     "Alpaca",
-    "Digitalocean.com",
     "DIRECTPAY",
     "DISCOVER",
     "VENMO", 
