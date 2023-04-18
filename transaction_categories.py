@@ -33,6 +33,7 @@ categories = {
             "AUNTIEANNES",
             "ROHRERSTOWN GRO",
             "PANERA BREAD",
+            "Tst* lunas",
         ],
     },
 
@@ -94,6 +95,9 @@ categories = {
             "Speedway",
             "Pilot 00002584",
             "Marathon petro",
+            "Wawa",
+            "SAM'S FUEL",
+            "Cp penndot york",
         ],
         "Insurance": [
             "FSI KY FARM BUREAU",
@@ -159,7 +163,9 @@ categories = {
         ],
         "Holiday": [],
         "Events": [],
-        "Traveling": [],
+        "Traveling": [
+            "QUALITY INN",
+        ],
     },
 
     "Baby": {
@@ -169,7 +175,9 @@ categories = {
             "Sp ninni co",
         ],
         "Toiletries": [],
-        "Doctors Appt": [],
+        "Doctors Appt": [
+            "Ws mywellspan ext",
+        ],
     },
 
     "Entertainment": {
@@ -221,7 +229,7 @@ exclude_list = [
     "Interest earned",
     "To Savings",
     "House Down Payment Vault",
-    "WELLS FMARGO",
+    "WELLS FARGO",
     "SOFI BANK",
     "WHITAKER BANK",
     "COINBASE",
