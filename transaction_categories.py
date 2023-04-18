@@ -1,143 +1,226 @@
 categories = {
-    "Food": [
-        "SAUBELS MARKET", 
-        "ALDI", 
-        "YORK GROCERY OUTLET", 
-        "BBS GROCE",
-        "CHICK-FIL-A",
-        "TST* WIRED CUP",
-        "AUNTIEANNES",
-        "ROHRERSTOWN GRO",
-        "GIANT",
-        "CHIPOTLE",
-        "CHARLESTON COFFEE",
-        "TRADER JOE",
-        "FOOD LION",
-        "WENDYS",
-        "THE BUBBLE ROOM",
-        "SMOOTHIE KING",
-        "PUBLIX",
-        "COOL DOUGH",
-        "EVANS ORCHARD",
-        "KROGER",
-        "GRAETERS",
-        "PANERA BREAD",
-        "LEG UP FARMERS",
-        "MARKET HOUSE PICKL",
-        "MONTE CARLO PIZZA",
-        "THE FRESH MARKET",
-        "WHOLEFDS",
-        "Tst* lunas",
-    ],
-    "Health": [
-        "CVS/PHARM",
-        "HEALTHCARE",
-        "MIDWAY FAMILY DENTAL",
-        "WWW.CLEARLYFILTERED.CO",
-        "LEXINGTON ENDODONTICS",
-        "Zion Health",
-        "Ws mywellspan ext",
-    ],
-    "Utilities": [
-        "COMCAST", 
-        "ENTEGRO LLC", 
-        "FIRSTENERGY",
-    ],
-    "Housing": [
-        "BUTTONWOOD GARDENS",
-        "Buttonwood",
-        "Qbe insurance",
-        "airdoctor",
-    ],
-    "Transportation": [
-        "SHEETZ", 
-        "TURKEY HILL",
-        "COLUMBIA GAS",
-        "FSI KY FARM BUREAU",
-        "RUTTER",
-        "BP#",
-        "ADVANCE AUTO PARTS",
-        "CIRCLE K",
-        "SUNOCO",
-        "RACETRAC",
-        "PARKERS",
-        "SHELL SERVICE STATION",
-        "Shell oil",
-        "GO MART",
-        "MARATHON PETRO",
-        "Speedway",
-        "Yorkshire garage",
-        "Wawa",
-        "SAM'S FUEL",
-        "Cp penndot york",
-    ],
-    "Shopping": [
-        "PRICERITE YORK", 
-        "Finders Keepers",
-        "Fashion Cents",
-        "MERCARI",
-        "GABRIEL BROS",
-        "COMMUNITYAID",
-        "ABERCROMBIE &amp; FITCH",
-        "BURLINGTON",
-        "THRIFT",
-        "MARSHALLS",
-        "TARGET",
-        "Amazon.com",
-        "AMZN",
-        "GOODWILL",
-        "ROSS STORES",
-        "OLLIES BARGAIN OUTLET",
-        "THE HOME DEPOT",
-        "DOLLAR-GE",
-        "Forever 21",
-        "TJMAXX",
-        "OLD NAVY",
-        "WM SUPERCENTER",
-        "Newegg",
-        "Ebay",
-        "BED BATH &amp; BEYOND",
-        "BEDBATH&amp;BEYOND",
-        "THE SALVATION ARMY",
-        "Etsy.com",
-        "Framework*",
-        "Dollar tree",
-    ],
-    "Education": [
-        "FIRSTMARK",
-    ],
-    '"Vacation, Holiday, Events, and Traveling"': [
-        "Leewaysvcctrviolatione",
-        "QUALITY INN",
-    ],
-    "Baby": [
-        "rebelstork",
-        "WOMENS HEALTH SERVICES",
-    ],
-    "Entertainment": [
-        "SPOTIFY", 
-        "SOUTH YORK CINEMA",
-    ],
-    "Misc": [
-        "Check Paid",
-        "USPS",
-        "WAL-MART",
-        "WALMART",
-        "Wal-Mart",
-    ],
-    "Income": [
-        "LIBERTY UNIVER",
-        "NAKUPUNA SOLUTIO",
-    ]
+    "Food": {
+        "Groceries": [
+            "SAUBELS MARKET", 
+            "ALDI", 
+            "YORK GROCERY OUTLET", 
+            "BBS GROCE",
+            "GIANT",
+            "TRADER JOE",
+            "FOOD LION",
+            "PUBLIX",
+            "EVANS ORCHARD",
+            "KROGER",
+            "LEG UP FARMERS",
+            "MARKET HOUSE PICKL",
+            "THE FRESH MARKET",
+            "WHOLEFDS",
+            "grocery",
+        ],
+        "Eating Out": [
+            "Tropical smoothie cafe",
+            "Gardinos pizza",
+            "MONTE CARLO PIZZA",
+            "GRAETERS",
+            "COOL DOUGH",
+            "WENDYS",
+            "THE BUBBLE ROOM",
+            "SMOOTHIE KING",
+            "CHIPOTLE",
+            "CHARLESTON COFFEE",
+            "CHICK-FIL-A",
+            "TST* WIRED CUP",
+            "AUNTIEANNES",
+            "ROHRERSTOWN GRO",
+            "PANERA BREAD",
+        ],
+    },
+
+    "Health": {
+        "Insurance": [
+            "Zion Health",
+        ],
+        "Dentistry": [
+            "LEXINGTON ENDODONTICS",
+            "MIDWAY FAMILY DENTAL",
+        ],
+        "Doctors Appt": [
+            "HEALTHCARE",
+        ],
+        "Supplements & Drugs": [
+            "CVS/PHARM",
+        ],
+        "Products": [
+            "WWW.CLEARLYFILTERED.CO",
+            "airdoctor",
+        ],
+    },
+
+    "Utilities": {
+        "Housing": [
+            "ENTEGRO LLC", 
+            "FIRSTENERGY",
+        ],
+        "Internet": [
+            "COMCAST", 
+        ],
+    },
+
+    "Housing": {
+        "Insurance": [
+            "Qbe insurance",
+        ],
+        "Rent & Mortgage": [
+            "BUTTONWOOD GARDENS",
+            "Buttonwood Oper",
+        ]
+    },
+
+    "Transportation": {
+        "Gas": [
+            "SHEETZ", 
+            "TURKEY HILL",
+            "COLUMBIA GAS",
+            "RUTTER",
+            "BP#",
+            "CIRCLE K",
+            "SUNOCO",
+            "RACETRAC",
+            "PARKERS",
+            "SHELL SERVICE STATION",
+            "Shell oil",
+            "GO MART",
+            "MARATHON PETRO",
+            "Speedway",
+            "Pilot 00002584",
+            "Marathon petro",
+        ],
+        "Insurance": [
+            "FSI KY FARM BUREAU",
+            "Progressive *insurance",
+        ],
+        "Maintenance": [
+            "ADVANCE AUTO PARTS",
+            "Yorkshire garage",
+        ],
+    },
+
+    "Shopping": {
+        "Clothing": [
+            "PRICERITE YORK", 
+            "Finders Keepers",
+            "Fashion Cents",
+            "MERCARI",
+            "GABRIEL BROS",
+            "ABERCROMBIE &amp; FITCH",
+            "BURLINGTON",
+            "THRIFT",
+            "MARSHALLS",
+            "TARGET",
+            "GOODWILL",
+            "ROSS STORES",
+            "Forever 21",
+            "TJMAXX",
+            "OLD NAVY",
+            "THE SALVATION ARMY",
+            "Poshmark",
+        ],
+        "Home": [
+            "BED BATH &amp; BEYOND",
+            "BEDBATH&amp;BEYOND",
+            "Hotel columbia collect",
+            "THE HOME DEPOT",
+        ],
+        "Misc": [
+            "COMMUNITYAID",
+            "OLLIES BARGAIN OUTLET",
+            "Ebay",
+            "Dollar tree",
+            "DOLLAR-GE",
+            "Etsy.com",
+            "Amazon.com",
+            "AMZN",
+        ],
+        "Office": [
+            "Framework*",
+            "Newegg",
+        ],
+    },
+
+    "Education": {
+        "Debt": [
+            "FIRSTMARK",
+        ],
+    },
+
+    '"Vacation, Holiday, Events, and Traveling"': {
+        "Vaction": [
+            "Leewaysvcctrviolatione",
+        ],
+        "Holiday": [],
+        "Events": [],
+        "Traveling": [],
+    },
+
+    "Baby": {
+        "Products": [
+            "rebelstork",
+            "WOMENS HEALTH SERVICES",
+            "Sp ninni co",
+        ],
+        "Toiletries": [],
+        "Doctors Appt": [],
+    },
+
+    "Entertainment": {
+        "Music": [
+            "SPOTIFY", 
+        ],
+        "Movies": [
+            "SOUTH YORK CINEMA",
+        ]
+    },
+
+    "Income": {
+        "John's Wages": [
+            "LIBERTY UNIVER",
+            "NAKUPUNA SOLUTIO",
+        ],
+    },
+
+    "Business": {
+        "Investment Business": [
+            "Digitalocean.com",
+        ],
+    },
+
+    "Services": {
+        "Privacy Software": [
+            "Anonaddy",
+        ],
+        "Creative Software": [
+            "CANVA",
+        ]
+    },
+
+    "Misc": {
+        "Misc": [
+            "Check Paid",
+            "USPS",
+            "WAL-MART",
+            "WALMART",
+            "Wal-Mart",
+        ],
+    },
 }
 
 exclude_list = [
     "TD AMERITRADE", 
-    "2022 Roth IRA Contribution Vault",
+    "Roth IRA Contribution Vault",
     "SoFi Credit Card",
     "Interest earned",
     "To Savings",
-    "From 2023 House Down Payment Vault",
+    "House Down Payment Vault",
     "WELLS FMARGO",
     "SOFI BANK",
     "WHITAKER BANK",
@@ -147,11 +230,12 @@ exclude_list = [
     "SOFI CREDIT CORP",
     "Payment - thank you",
     "Alpaca",
-    "Digitalocean.com",
     "DIRECTPAY",
     "DISCOVER",
     "VENMO", 
     "Auto-pay thank you",
-    "WELLS FARGO",
+    "Fulton financial corp",
     "From savings",
+    "MEMBERS 1ST FCU",
+    "BOTTOMLINE TECHN",
 ]
