@@ -16,6 +16,8 @@ categories = {
             "THE FRESH MARKET",
             "WHOLEFDS",
             "grocery",
+            "Groceries",
+            "York Market Pickles",
         ],
         "Eating Out": [
             "Tropical smoothie cafe",
@@ -34,12 +36,17 @@ categories = {
             "ROHRERSTOWN GRO",
             "PANERA BREAD",
             "Tst* lunas",
+            "Parma pizza",
+            "Sq *molly's courtyard",
+            "🍕",
+            "Soft Pretzel",
         ],
     },
 
     "Health": {
         "Insurance": [
             "Zion Health",
+            "HDS Dental Insurance",
         ],
         "Dentistry": [
             "LEXINGTON ENDODONTICS",
@@ -55,15 +62,20 @@ categories = {
             "WWW.CLEARLYFILTERED.CO",
             "airdoctor",
         ],
+        "Hygiene": [
+            "Ulta",
+        ]
     },
 
     "Utilities": {
         "Housing": [
             "ENTEGRO LLC", 
             "FIRSTENERGY",
+            "Bundled Utilites",
         ],
         "Internet": [
             "COMCAST", 
+            "Phone Bill",
         ],
     },
 
@@ -128,6 +140,8 @@ categories = {
             "OLD NAVY",
             "THE SALVATION ARMY",
             "Poshmark",
+            "Plato's closet",
+            "Jcpenney.com",
         ],
         "Home": [
             "BED BATH &amp; BEYOND",
@@ -144,6 +158,7 @@ categories = {
             "Etsy.com",
             "Amazon.com",
             "AMZN",
+            "Five below",
         ],
         "Office": [
             "Framework*",
@@ -165,6 +180,7 @@ categories = {
         "Events": [],
         "Traveling": [
             "QUALITY INN",
+            "Frontier abzepm",
         ],
     },
 
@@ -199,15 +215,31 @@ categories = {
     "Business": {
         "Investment Business": [
             "Digitalocean.com",
+            "Live Droplet",
+            "Analysis Droplet",
         ],
     },
 
     "Services": {
         "Privacy Software": [
             "Anonaddy",
+            "Romanius",
         ],
         "Creative Software": [
             "CANVA",
+        ],
+        "Tax Services": [
+            "Intuit *turbotax",
+            "Cryptotaxcalculator.io",
+        ],
+        "Professional Software": [
+            "Chatgpt subscription",
+        ]
+    },
+
+    "Giving": {
+        "Poverty": [
+            "Compassion internation",
         ]
     },
 
@@ -228,6 +260,7 @@ exclude_list = [
     "SoFi Credit Card",
     "Interest earned",
     "To Savings",
+    "From Checking",
     "House Down Payment Vault",
     "WELLS FARGO",
     "SOFI BANK",
@@ -244,6 +277,7 @@ exclude_list = [
     "Auto-pay thank you",
     "Fulton financial corp",
     "From savings",
-    "MEMBERS 1ST FCU",
+    "MEMBERS 1ST",
     "BOTTOMLINE TECHN",
+    "SoFi Rewards Redemption",
 ]
