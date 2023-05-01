@@ -129,7 +129,6 @@ categories = {
             "MERCARI",
             "GABRIEL BROS",
             "ABERCROMBIE &amp; FITCH",
-            "BURLINGTON",
             "THRIFT",
             "MARSHALLS",
             "TARGET",
@@ -159,6 +158,7 @@ categories = {
             "Amazon.com",
             "AMZN",
             "Five below",
+            "BURLINGTON",
         ],
         "Office": [
             "Framework*",
