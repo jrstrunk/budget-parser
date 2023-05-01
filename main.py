@@ -8,6 +8,11 @@ with open("sofi_banking.html") as f:
 banking_trans = parsers.parse_sofi_banking_transactions(raw_banking_trans_html)
 all_transactions.extend(banking_trans)
 
+with open("sofi_saving.html") as f:
+    raw_saving_trans_html = "".join(f.readlines())
+saving_trans = parsers.parse_sofi_banking_transactions(raw_saving_trans_html)
+all_transactions.extend(saving_trans)
+
 with open("sofi_credit1.html") as f:
     raw_credit1_trans_html = "".join(f.readlines())
 credit1_trans = parsers.parse_sofi_credit_transactions(raw_credit1_trans_html)
@@ -23,7 +28,8 @@ with open("discover_credit.html") as f:
 dcredit_trans = parsers.parse_discover_transactions(raw_dcredit_trans_html)
 all_transactions.extend(dcredit_trans)
 
-categorized_transactions = parsers.categorize_transactions(all_transactions)
+manual_trans = parsers.parse_manual_transactions()
+all_transactions.extend(manual_trans)
 
 sorted_transactions = parsers.sort_transactions(all_transactions)
 
