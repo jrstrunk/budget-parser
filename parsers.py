@@ -1,7 +1,7 @@
 import re
 from datetime import datetime
 from transaction_categories import categories, exclude_list
-from manual_transactions import manual_transactions
+from input.manual_transactions import manual_transactions
 from transaction import Transaction
 
 def parse_sofi_banking_transactions(raw_trans_html: str):

@@ -3,8 +3,8 @@ import parsers
 from hooks import hooks
 
 files = [
-    f for f in os.listdir("./") 
-        if os.path.isfile(os.path.join("./", f)) and ".html" in f
+    "input/" + f for f in os.listdir("input/") 
+        if os.path.isfile(os.path.join("input/", f)) and ".html" in f
 ]
 
 all_transactions = []
