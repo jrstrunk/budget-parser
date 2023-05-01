@@ -1,32 +1,32 @@
+import os
 import parsers
 from hooks import hooks
 
+files = [
+    f for f in os.listdir("./") 
+        if os.path.isfile(os.path.join("./", f)) and ".html" in f
+]
+
 all_transactions = []
 
-with open("sofi_banking.html") as f:
-    raw_banking_trans_html = "".join(f.readlines())
-banking_trans = parsers.parse_sofi_banking_transactions(raw_banking_trans_html)
-all_transactions.extend(banking_trans)
+for input_file in files:
+    trans = []
+    with open(input_file) as f:
+        raw_trans_html = "".join(f.readlines())
+    
+    if "sofi_banking" in input_file:
+        trans = parsers.parse_sofi_banking_transactions(raw_trans_html)
 
-with open("sofi_saving.html") as f:
-    raw_saving_trans_html = "".join(f.readlines())
-saving_trans = parsers.parse_sofi_banking_transactions(raw_saving_trans_html)
-all_transactions.extend(saving_trans)
+    elif "sofi_credit" in input_file:
+        trans = parsers.parse_sofi_credit_transactions(raw_trans_html)
 
-with open("sofi_credit1.html") as f:
-    raw_credit1_trans_html = "".join(f.readlines())
-credit1_trans = parsers.parse_sofi_credit_transactions(raw_credit1_trans_html)
-all_transactions.extend(credit1_trans)
+    elif "discover_credit" in input_file:
+        trans = parsers.parse_discover_transactions(raw_trans_html)
 
-with open("sofi_credit2.html") as f:
-    raw_credit2_trans_html = "".join(f.readlines())
-credit2_trans = parsers.parse_sofi_credit_transactions(raw_credit2_trans_html)
-all_transactions.extend(credit2_trans)
+    elif "venmo" in input_file:
+        trans = parsers.parse_venmo_transactions(raw_trans_html)
 
-with open("discover_credit.html") as f:
-    raw_dcredit_trans_html = "".join(f.readlines())
-dcredit_trans = parsers.parse_discover_transactions(raw_dcredit_trans_html)
-all_transactions.extend(dcredit_trans)
+    all_transactions.extend(trans)
 
 manual_trans = parsers.parse_manual_transactions()
 all_transactions.extend(manual_trans)

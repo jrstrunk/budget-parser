@@ -106,6 +106,9 @@ def parse_discover_transactions(raw_trans_html: str):
         )
     return transactions
 
+def parse_venmo_transactions(raw_trans_html: str):
+    return []
+
 def parse_manual_transactions():
     return [
         Transaction(datetime.strptime(t[0], "%Y/%m/%d"), t[1], t[2]) 
