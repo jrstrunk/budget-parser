@@ -1,4 +1,5 @@
 import parsers
+from hooks import hooks
 
 all_transactions = []
 
@@ -24,7 +25,17 @@ all_transactions.extend(dcredit_trans)
 
 categorized_transactions = parsers.categorize_transactions(all_transactions)
 
-sorted_transactions = parsers.sort_transactions(categorized_transactions)
+sorted_transactions = parsers.sort_transactions(all_transactions)
+
+altered_transactions = []
+for tran in sorted_transactions:
+    hooked = False
+    for hook in hooks:
+        for altered_tran in hook(tran):
+            hooked = True
+            altered_transactions.append(altered_tran)
+    if not hooked:
+        altered_transactions.append(tran)
 
 month = input(
     "Please enter the numerical value for " 
