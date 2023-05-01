@@ -32,9 +32,9 @@ month = input(
 )
 
 with open("transaction_output.txt", "w") as f:
-    for trans in [t for t in sorted_transactions 
-            if month in t.split(",")[1].split("/")[0]]:
-        print(trans, file=f)
+    for tran in [t for t in altered_transactions 
+            if int(month) == int(t.get_month())]:
+        print(tran.get_formatted_transaction(), end="", file=f)
 
 print(
     "Finishing parsing transactions!",

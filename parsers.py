@@ -1,11 +1,13 @@
 import re
-from transaction_categories import categories, exclude_list
 from datetime import datetime
+from transaction_categories import categories, exclude_list
+from manual_transactions import manual_transactions
+from transaction import Transaction
 
 def parse_sofi_banking_transactions(raw_trans_html: str):
     '''parses the transaction log in sofi and outputs it in a csv format. 
         the raw_trans_html string should start with "<tr data-mjs-value="'''
-    formatted_transactions = []
+    transactions = []
 
     # parse the whole page down to the needed tables
     secs = raw_trans_html.split('<div class="transactions"')
@@ -28,19 +30,17 @@ def parse_sofi_banking_transactions(raw_trans_html: str):
 
             # format the date
             split_trans = trans.split(",")
-            split_trans[0] = datetime\
-                .strptime(split_trans[0], "%B %d %Y")\
-                .strftime('%m/%d/%Y')
+            date = datetime.strptime(split_trans[0], "%B %d %Y")
+            # cast the amount to a float
+            amount = float(split_trans[2].replace("$", ""))
 
-            formatted_transaction = split_trans[0].split('/')[2] \
-                + split_trans[0].split('/')[0] + "," \
-                + ",".join(split_trans)
-
-            formatted_transactions.append(formatted_transaction)
-    return formatted_transactions
+            transactions.append(
+                Transaction(date, split_trans[1], amount)
+            )
+    return transactions
 
 def parse_sofi_credit_transactions(raw_trans_html: str):
-    formatted_transactions = []
+    transactions = []
 
     transaction_groups = raw_trans_html.split('data-qa="posted-transaction-item"')
     del transaction_groups[0]
@@ -67,15 +67,16 @@ def parse_sofi_credit_transactions(raw_trans_html: str):
         else:
             trans_details[1] = "-" + trans_details[1]
 
-        trans_details = trans_details[2].split('/')[2] \
-            + trans_details[2].split('/')[0] + "," \
-            +f"{trans_details[2]},{trans_details[0]},{trans_details[1]}"
+        date = datetime.strptime(trans_details[2], "%m/%d/%Y")
+        amount = float(trans_details[1].replace("$", ""))
             
-        formatted_transactions.append(trans_details)
-    return formatted_transactions
+        transactions.append(
+            Transaction(date, trans_details[0], amount)
+        )
+    return transactions
 
 def parse_discover_transactions(raw_trans_html: str):
-    formatted_transactions = []
+    transactions = []
 
     trans_table_rows = raw_trans_html\
         .split('<tbody id="postedTransactionData">')[1]\
@@ -85,75 +86,35 @@ def parse_discover_transactions(raw_trans_html: str):
     
     for trans_row in trans_table_rows:
         date = datetime.strptime(
-            trans_row.split('data-date="')[1].split('"')[0], "%Y%m%d")\
-            .strftime('%m/%d/%Y')
-        desc = trans_row.split('class="descTxt">')[1]\
+            trans_row.split('data-date="')[1].split('"')[0], "%Y%m%d")
+        name = trans_row.split('class="descTxt">')[1]\
             .split("</span>")[0]\
             .replace(",", "")\
             .replace("\n", "")\
             .replace("/", " ")
-        val = trans_row.split('class="amountVal ')[1]\
+        amount = trans_row.split('class="amountVal ')[1]\
             .split("</td>")[0]\
             .split(">")[1]
-        if "-" in val:
-            val = val.replace("-", "")
+        if "-" in amount:
+            amount = amount.replace("-", "")
         else:
-            val = "-" + val
+            amount = "-" + amount
+        amount = float(amount.replace("$", ""))
         
-        formatted_transaction = date.split('/')[2] \
-            + date.split('/')[0] + "," \
-            + f"{date},{desc},{val}"
+        transactions.append(
+            Transaction(date, name, amount)
+        )
+    return transactions
 
-        formatted_transactions.append(formatted_transaction)
-    return formatted_transactions
+def parse_manual_transactions():
+    return [
+        Transaction(datetime.strptime(t[0], "%Y/%m/%d"), t[1], t[2]) 
+            for t in manual_transactions
+    ]
 
-def categorize_transactions(trans: list):
-    cat_trans = []
-    for tran in trans:
-        # check each trans for the items in the exclude list, if they are in 
-        # the exclude list, continue to the next item so they are not added
-        # to the final list of transactions to return
-        skip = False
-        for ex in exclude_list:
-            if ex in tran:
-                skip = True
-                break
-        if skip:
-            continue
-
-        # add a category for each transaction, if a transaction has no 
-        # known category, it is assumed to have a category of Misc
-        category = "Misc"
-        sub_category = "Misc"
-        for cat in categories:
-            for sub_cat in categories[cat]:
-                for title in categories[cat][sub_cat]:
-                    if title.lower() in tran.lower():
-                        category = cat
-                        sub_category = sub_cat
-                        break
-        tran += "," + category + "," + sub_category
-        cat_trans.append(tran)
-    return cat_trans
-
-def sort_transactions(trans: list):
+def sort_transactions(transactions: list):
     return sorted(
-        trans, 
-        key=lambda x: 
-            datetime(
-                int(x.split(",")[1].split("/")[2]), 
-                int(x.split(",")[1].split("/")[0]), 
-                int(x.split(",")[1].split("/")[1])
-            ), 
+        transactions, 
+        key=lambda t: t.datetime,
         reverse=True
     )
-
-def get_transaction_category_totals(trans: list):
-    month_totals = {d: {cat: 0 for cat in categories} for d in set([f"{t.split(',')[0].split('/')[0]}/{t.split(',')[0].split('/')[2]}" for t in trans])}
-    for tran in trans:
-        stran = tran.split(",")
-        date = stran[0].split("/")[0] + "/" + stran[0].split("/")[2]
-        cat = stran[3].replace("\n", "")
-        val = -1 * float(stran[2].replace("$", ""))
-        month_totals[date][cat] += val
-    return month_totals
