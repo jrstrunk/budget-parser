@@ -16,9 +16,9 @@ def split_digitalocean_invoice(original_transaction: Transaction):
         return []
     
     trans = [
-        Transaction(original_transaction.datetime, "Romanius", -6),
-        Transaction(original_transaction.datetime, "Analysis Droplet", -57),
-        Transaction(original_transaction.datetime, "Live Droplet", -21),
+        Transaction(original_transaction.datetime, "Digital Ocean - Romanius", -6),
+        Transaction(original_transaction.datetime, "Digital Ocean - Analysis Droplet", -57),
+        Transaction(original_transaction.datetime, "Digital Ocean - Live Droplet", -21),
     ]
 
     expected_server_costs = -84

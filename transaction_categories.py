@@ -17,6 +17,7 @@ categories = {
             "WHOLEFDS",
             "grocery",
             "Groceries",
+            "ROHRERSTOWN GRO",
             "York Market Pickles",
         ],
         "Eating Out": [
@@ -33,13 +34,14 @@ categories = {
             "CHICK-FIL-A",
             "TST* WIRED CUP",
             "AUNTIEANNES",
-            "ROHRERSTOWN GRO",
             "PANERA BREAD",
             "Tst* lunas",
             "Parma pizza",
             "Sq *molly's courtyard",
             "🍕",
             "Soft Pretzel",
+            "Chicken guy",
+            "coffee",
         ],
     },
 
@@ -141,12 +143,15 @@ categories = {
             "Poshmark",
             "Plato's closet",
             "Jcpenney.com",
+            "H&amp;m",
+            "H&m",
         ],
         "Home": [
             "BED BATH &amp; BEYOND",
             "BEDBATH&amp;BEYOND",
             "Hotel columbia collect",
             "THE HOME DEPOT",
+            "Joann stores",
         ],
         "Misc": [
             "COMMUNITYAID",
@@ -175,12 +180,16 @@ categories = {
     '"Vacation, Holiday, Events, and Traveling"': {
         "Vaction": [
             "Leewaysvcctrviolatione",
+            "City of st augustine",
+            "Wdw world of disney",
+            "Vivo ",
         ],
         "Holiday": [],
         "Events": [],
         "Traveling": [
             "QUALITY INN",
             "Frontier abzepm",
+            "Frontier airlines",
         ],
     },
 
@@ -202,7 +211,10 @@ categories = {
         ],
         "Movies": [
             "SOUTH YORK CINEMA",
-        ]
+        ],
+        "Games": [
+            "Steamgames.com",
+        ],
     },
 
     "Income": {
@@ -260,6 +272,9 @@ exclude_list = [
     "SoFi Credit Card",
     "Interest earned",
     "To Savings",
+    "To checking",
+    "To Checking",
+    "From Savings",
     "From Checking",
     "House Down Payment Vault",
     "WELLS FARGO",
@@ -280,4 +295,6 @@ exclude_list = [
     "MEMBERS 1ST",
     "BOTTOMLINE TECHN",
     "SoFi Rewards Redemption",
+    "Coinbase.com",
+    "INTERNET PAYMENT - THANK YOU",
 ]
