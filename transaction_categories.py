@@ -19,6 +19,7 @@ categories = {
             "Groceries",
             "ROHRERSTOWN GRO",
             "York Market Pickles",
+            "Lidl",
         ],
         "Eating Out": [
             "Tropical smoothie cafe",
