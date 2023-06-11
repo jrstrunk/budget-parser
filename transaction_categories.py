@@ -123,6 +123,9 @@ categories = {
             "ADVANCE AUTO PARTS",
             "Yorkshire garage",
         ],
+        "Licenses & Registrations": [
+            "Cp penndot york",
+        ]
     },
 
     "Shopping": {
