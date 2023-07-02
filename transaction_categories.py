@@ -44,6 +44,8 @@ categories = {
             "Chicken guy",
             "coffee",
             "GRAND CENTRAL BAG LANCASTER PA",
+            "Bellas of bristol",
+            "Wendy's",
         ],
     },
 
@@ -80,6 +82,7 @@ categories = {
         "Internet": [
             "COMCAST", 
             "Phone Bill",
+            "MINT MOBILE",
         ],
     },
 
@@ -122,6 +125,7 @@ categories = {
         "Maintenance": [
             "ADVANCE AUTO PARTS",
             "Yorkshire garage",
+            "Nayax air",
         ],
         "Licenses & Registrations": [
             "Cp penndot york",
@@ -195,6 +199,7 @@ categories = {
             "QUALITY INN",
             "Frontier abzepm",
             "Frontier airlines",
+            "Best western",
         ],
     },
 
@@ -203,6 +208,7 @@ categories = {
             "rebelstork",
             "WOMENS HEALTH SERVICES",
             "Sp ninni co",
+            "gathre.com",
         ],
         "Toiletries": [],
         "Doctors Appt": [
@@ -286,6 +292,7 @@ exclude_list = [
     "SOFI BANK",
     "WHITAKER BANK",
     "COINBASE",
+    "Coinbase.com",
     "SOFI SECURITIES",
     "Mobile Check Deposit",
     "SOFI CREDIT CORP",
@@ -297,6 +304,8 @@ exclude_list = [
     "Auto-pay thank you",
     "Fulton financial corp",
     "From savings",
+    "From Savings",
+    "Sofi instant payment",
     "MEMBERS 1ST",
     "BOTTOMLINE TECHN",
     "SoFi Rewards Redemption",

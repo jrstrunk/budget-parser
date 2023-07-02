@@ -1,6 +1,10 @@
 manual_transactions = [
     # example:
     # ["2023/04/12", "Venmo", -13],
+    ["2023/07/01", "Digitalocean.com", 102.47],
+    ["2023/06/20", "Bbgfgvfhh🍼🍼🍼 - Venmo from Brittany Culp", 6],
+    ["2023/06/20", "Aldi Grocerys 06/20 - Venmo to Terriann Culp", -18.38],
+    ["2023/06/02", "Phone Bill - Venmo to Terriann Culp", -60],
     ["2023/04/30", "Groceries Etc. - Venmo to Terriann Culp", -46],
     ["2023/04/24", "Groceries paid in Cash", -39],
     ["2023/04/20", "Berries - Venmo to Terriann Culp", -10],
