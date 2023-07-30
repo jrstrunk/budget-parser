@@ -20,6 +20,7 @@ categories = {
             "ROHRERSTOWN GRO",
             "York Market Pickles",
             "Lidl",
+            "Hillside",
         ],
         "Eating Out": [
             "Tropical smoothie cafe",
@@ -93,6 +94,7 @@ categories = {
         "Rent & Mortgage": [
             "BUTTONWOOD GARDENS",
             "Buttonwood Oper",
+            "RPMANAGEMENT",
         ]
     },
 
@@ -116,7 +118,7 @@ categories = {
             "Marathon petro",
             "Wawa",
             "SAM'S FUEL",
-            "Cp penndot york",
+            "Gulf oil",
         ],
         "Insurance": [
             "FSI KY FARM BUREAU",
@@ -154,6 +156,7 @@ categories = {
             "Jcpenney.com",
             "H&amp;m",
             "H&m",
+            "AIORI",
         ],
         "Home": [
             "BED BATH &amp; BEYOND",
@@ -173,6 +176,8 @@ categories = {
             "AMZN",
             "Five below",
             "BURLINGTON",
+            "Hobby lobby",
+            "MICHAELS STORES",
         ],
         "Office": [
             "Framework*",
