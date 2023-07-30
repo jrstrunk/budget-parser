@@ -312,3 +312,10 @@ exclude_list = [
     "Coinbase.com",
     "INTERNET PAYMENT - THANK YOU",
 ]
+
+not_on_expense_budget_list = [
+    "Education",
+    "Giving",
+    "Business",
+    "Income",
+]
