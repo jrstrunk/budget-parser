@@ -2,15 +2,12 @@ from datetime import datetime
 from transaction_categories import categories, exclude_list, not_on_expense_budget_list
 
 class Transaction:
-    # accounted_for transactions are transactions whose expense is accounted for 
-    # in some way separate from the budget, so they are flagged and not counted
-    # towards the monthly budget expense totals
     def __init__(
             self, 
             datetime: datetime, 
             name: str, 
             amount: float, 
-            on_expense_budget: bool = None):
+            transaction_type: str = None):
         self.datetime = datetime
         self.name = name
         self.amount = amount
@@ -34,15 +31,15 @@ class Transaction:
                             self.sub_category = sub_cat
                             break
         
-        # set if the transaction is included on the expense budget
-        if on_expense_budget is None:
-            self.on_expense_budget = True
+        # add a type to this transaction
+        if not transaction_type:
+            self.transaction_type = "Expense"
             for cat in not_on_expense_budget_list:
                 if cat == self.category:
-                    self.on_expense_budget = False
+                    self.transaction_type = "External"
                     break
         else:
-            self.on_expense_budget = on_expense_budget
+            self.transaction_type = transaction_type
 
     def get_date_str(self):
         return self.datetime.strftime('%m/%d/%Y')
@@ -66,4 +63,4 @@ class Transaction:
             + f"{self.get_dollar_str()}," \
             + f"{self.category}," \
             + f"{self.sub_category}," \
-            + f"{'Yes' if self.on_expense_budget else 'No'}\n"
+            + f"{self.transaction_type}\n"
