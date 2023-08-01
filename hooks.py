@@ -14,23 +14,15 @@ def split_naku_income(original_transaction: Transaction):
 def split_digitalocean_invoice(original_transaction: Transaction):
     if not "Digitalocean.com" == original_transaction.name:
         return [] # do not modify original transaction
-    
-    trans = [
-        Transaction(original_transaction.datetime, "Digital Ocean - Romanius", -6),
-        Transaction(original_transaction.datetime, "Digital Ocean - Analysis Droplet", -57, True),
-        Transaction(original_transaction.datetime, "Digital Ocean - Live Droplet", -21, True),
+
+    original_transaction.name = "Digitalocean.com - Investment Business Servers"
+
+    return [
+        original_transaction,
     ]
 
-    expected_server_costs = -84
-
-    if expected_server_costs != original_transaction.amount:
-        original_transaction.amount += -expected_server_costs
-        trans.append(original_transaction)
-
-    return trans
-
 def split_rent_utilities(original_transaction: Transaction):
-    if not "Buttonwood Oper" == original_transaction.name:
+    if not "RPMANAGEMENT-BGO" == original_transaction.name:
         return [] # do not modify original transaction
     
     rent_amount = -1303
