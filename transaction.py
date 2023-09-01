@@ -1,5 +1,6 @@
 from datetime import datetime
 from transaction_categories import categories, exclude_list, not_on_expense_budget_list
+import re
 
 class Transaction:
     def __init__(
@@ -16,30 +17,39 @@ class Transaction:
         self.skip = False
 
         # determine if this transaction should be excluded
-        for ex in exclude_list:
-            if ex in self.name:
-                self.skip = True
-                break
+        self.__determine_exclusion()
 
         # categorize this transaction
+        self.__categorize()
+        
+        # add a type to this transaction
+        if not transaction_type:
+            self.__set_type()
+        else:
+            self.transaction_type = transaction_type
+
+    def __determine_exclusion(self):
+        for ex in exclude_list:
+            if re.match(ex, self.name):
+                self.skip = True
+                return
+
+    def __categorize(self):
         if not self.skip:
             for cat in categories:
                 for sub_cat in categories[cat]:
                     for title in categories[cat][sub_cat]:
-                        if title.lower() in self.name.lower():
+                        if re.search(title.lower(), self.name.lower()):
                             self.category = cat
                             self.sub_category = sub_cat
-                            break
-        
-        # add a type to this transaction
-        if not transaction_type:
-            self.transaction_type = "Expense"
-            for cat in not_on_expense_budget_list:
-                if cat == self.category:
-                    self.transaction_type = "External"
-                    break
-        else:
-            self.transaction_type = transaction_type
+                            return
+
+    def __set_type(self):
+        self.transaction_type = "Expense"
+        for cat in not_on_expense_budget_list:
+            if cat == self.category:
+                self.transaction_type = "External"
+                return
 
     def get_date_str(self):
         return self.datetime.strftime('%m/%d/%Y')
