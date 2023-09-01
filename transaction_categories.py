@@ -1,3 +1,4 @@
+# case insensitive
 categories = {
     "Food": {
         "Groceries": [
@@ -21,6 +22,9 @@ categories = {
             "York Market Pickles",
             "Lidl",
             "Hillside",
+            "🐝",
+            "🥛",
+            "Perrydell farm",
         ],
         "Eating Out": [
             "Tropical smoothie cafe",
@@ -39,7 +43,8 @@ categories = {
             "PANERA BREAD",
             "Tst* lunas",
             "Parma pizza",
-            "Sq *molly's courtyard",
+            "Sq \*molly's courtyard",
+            "Pizza",
             "🍕",
             "Soft Pretzel",
             "Chicken guy",
@@ -131,6 +136,7 @@ categories = {
         ],
         "Licenses & Registrations": [
             "Cp penndot york",
+            "Runkles",
         ]
     },
 
@@ -172,11 +178,12 @@ categories = {
             "Dollar tree",
             "DOLLAR-GE",
             "Etsy.com",
+            "Etsy inc seller fees",
             "Amazon.com",
             "AMZN",
             "Five below",
             "BURLINGTON",
-            "Hobby lobby",
+            "Hobby[\s-]lobby",
             "MICHAELS STORES",
         ],
         "Office": [
@@ -215,7 +222,9 @@ categories = {
             "Sp ninni co",
             "gathre.com",
         ],
-        "Toiletries": [],
+        "Toiletries": [
+            "Diapers",
+        ],
         "Doctors Appt": [
             "Ws mywellspan ext",
         ],
@@ -282,17 +291,19 @@ categories = {
     },
 }
 
+# case sensitive
 exclude_list = [
     "TD AMERITRADE", 
-    "Roth IRA Contribution Vault",
     "SoFi Credit Card",
     "Interest earned",
     "To Savings",
     "To checking",
     "To Checking",
+    "From savings",
     "From Savings",
     "From Checking",
-    "House Down Payment Vault",
+    "To .* Vault",
+    "From .* Vault",
     "WELLS FARGO",
     "SOFI BANK",
     "WHITAKER BANK",
@@ -308,8 +319,6 @@ exclude_list = [
     "VENMO", 
     "Auto-pay thank you",
     "Fulton financial corp",
-    "From savings",
-    "From Savings",
     "Sofi instant payment",
     "MEMBERS 1ST",
     "BOTTOMLINE TECHN",
