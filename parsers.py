@@ -78,23 +78,21 @@ def parse_sofi_credit_transactions(raw_trans_html: str):
 def parse_discover_transactions(raw_trans_html: str):
     transactions = []
 
-    trans_table_rows = raw_trans_html\
-        .split('<tbody id="postedTransactionData">')[1]\
-        .split("</tbody>")[0]\
-        .split("<tr")
-    del trans_table_rows[0]
-    
+    trans_table = re.findall(r"transactionTbl[^>]*>([\s\S]*?)<\/table>", raw_trans_html)[0]
+
+    # remove the first match, the column header row
+    trans_table_rows = re.findall(r"<tr[^>]*>(?:[\s\S]*?)<\/tr>", trans_table)[1:]
+
     for trans_row in trans_table_rows:
         date = datetime.strptime(
-            trans_row.split('data-date="')[1].split('"')[0], "%Y%m%d")
-        name = trans_row.split('class="descTxt">')[1]\
-            .split("</span>")[0]\
-            .replace(",", "")\
-            .replace("\n", "")\
-            .replace("/", " ")
-        amount = trans_row.split('class="amountVal ')[1]\
-            .split("</td>")[0]\
-            .split(">")[1]
+            re.findall(r'data-date="(.*?)"', trans_row)[0],
+            "%m/%d/%Y",
+        )
+        name = re.findall(r'class="merchant-name">([\s\S]*?)<', trans_row)[0]\
+            .replace("\n", " ")\
+            .replace("&amp;", "&")
+        amount = re.findall(r'data-amt="(.*?)"', trans_row)[0]
+
         if "-" in amount:
             amount = amount.replace("-", "")
         else:
