@@ -1,8 +1,9 @@
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from transaction_categories import categories, exclude_list
 from input.manual_transactions import manual_transactions
 from transaction import Transaction
+from bs4 import BeautifulSoup
 
 def parse_sofi_banking_transactions(raw_trans_html: str):
     '''parses the transaction log in sofi and outputs it in a csv format. 
@@ -105,7 +106,50 @@ def parse_discover_transactions(raw_trans_html: str):
     return transactions
 
 def parse_venmo_transactions(raw_trans_html: str):
-    return []
+    transactions = []
+
+    trans = re.findall(r"<article[^>]*>(?:[\s\S]*?)<\/article>", raw_trans_html)
+
+    for tran in trans:
+        soup = BeautifulSoup(tran, 'html.parser')
+
+        days_ago = soup.find("div", {"aria-label": True}).get_text(strip=True)
+        if "d" in days_ago:
+            days_ago = int(days_ago[:-1])
+            current_date = datetime.now()
+            date = current_date - timedelta(days=days_ago)
+        else:
+            date = datetime.strptime(
+                days_ago + " " + datetime.now().strftime("%Y"), 
+                '%b %d %Y',
+            )
+
+        story_headline = soup.select_one("div[id^='storyHeadlineId-']")\
+            .get_text(strip=True)
+        story_content = soup.select_one(".storyContent_storyContentLink__AiXaY")\
+            .get_text(strip=True)
+
+        if "Youpaid" in story_headline:
+            name = story_content \
+                + " - Venmo to " \
+                + story_headline.replace("Youpaid", "")
+            mult = -1
+        elif "paidyou" in story_headline:
+            name = story_content \
+                + " - Venmo from " \
+                + story_headline.replace("paidyou", "")
+            mult = 1
+        else:
+            continue
+
+        story_hidden_amount = soup.select_one("span[id^='storyHidenAmount-']").get_text(strip=True)
+        amount = float(story_hidden_amount.replace("$", "")) * mult
+
+        transactions.append(
+            Transaction(date, name, amount)
+        )
+
+    return transactions
 
 def parse_manual_transactions():
     return [
