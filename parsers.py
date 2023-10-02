@@ -43,12 +43,19 @@ def parse_sofi_banking_transactions(raw_trans_html: str):
 def parse_sofi_credit_transactions(raw_trans_html: str):
     transactions = []
 
-    transaction_groups = raw_trans_html.split('data-qa="posted-transaction-item"')
-    del transaction_groups[0]
-    transaction_groups = [t.split("</span>")[0] for t in transaction_groups]
+    posted_trans = raw_trans_html.split('data-qa="posted-transaction-item"')
+    posted_trans = [t.split("</span>")[0] for t in posted_trans]
 
-    # remove every odd group because there are two listings for every transaction
-    transaction_groups = [t for i, t in enumerate(transaction_groups) if i % 2 == 0]
+    # remove every even group because there are two listings for every transaction
+    posted_trans = [t for i, t in enumerate(posted_trans) if i % 2 == 1]
+
+    pending_trans = raw_trans_html.split('data-qa="pending-transaction-item"')
+    pending_trans = [t.split("</span>")[0] for t in pending_trans]
+
+    # remove every even group because there are two listings for every transaction
+    pending_trans = [t for i, t in enumerate(pending_trans) if i % 2 == 1]
+
+    transaction_groups = posted_trans + pending_trans
 
     # parse the whole page down to the needed tables
     for tgroup in transaction_groups:
