@@ -52,6 +52,9 @@ categories = {
             "GRAND CENTRAL BAG LANCASTER PA",
             "Bellas of bristol",
             "Wendy's",
+            "Javateas gourmet coffe",
+            "Cantelope",
+            "Watermelon",
         ],
     },
 
@@ -63,6 +66,7 @@ categories = {
         "Dentistry": [
             "LEXINGTON ENDODONTICS",
             "MIDWAY FAMILY DENTAL",
+            "Hershey Dental Assoc",
         ],
         "Doctors Appt": [
             "HEALTHCARE",
@@ -72,6 +76,7 @@ categories = {
         ],
         "Products": [
             "WWW.CLEARLYFILTERED.CO",
+            "clearly filtered",
             "airdoctor",
         ],
         "Hygiene": [
@@ -124,10 +129,12 @@ categories = {
             "Wawa",
             "SAM'S FUEL",
             "Gulf oil",
+            "WEIGELS",
         ],
         "Insurance": [
             "FSI KY FARM BUREAU",
             "Progressive *insurance",
+            "Progressive \*insurance"
         ],
         "Maintenance": [
             "ADVANCE AUTO PARTS",
@@ -137,6 +144,7 @@ categories = {
         "Licenses & Registrations": [
             "Cp penndot york",
             "Runkles",
+            "Kytc driver lic",
         ]
     },
 
@@ -212,6 +220,7 @@ categories = {
             "Frontier abzepm",
             "Frontier airlines",
             "Best western",
+            "Airbnb",
         ],
     },
 
@@ -325,6 +334,7 @@ exclude_list = [
     "SoFi Rewards Redemption",
     "Coinbase.com",
     "INTERNET PAYMENT - THANK YOU",
+    "CASHBACK BONUS",
 ]
 
 not_on_expense_budget_list = [
