@@ -124,7 +124,7 @@ def parse_venmo_transactions(raw_trans_html: str):
         if "d" in days_ago:
             days_ago = int(days_ago[:-1])
             current_date = datetime.now()
-            date = current_date - timedelta(days=days_ago)
+            date = current_date - timedelta(days=days_ago + 1)
         else:
             date = datetime.strptime(
                 days_ago + " " + datetime.now().strftime("%Y"), 
