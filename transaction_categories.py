@@ -25,6 +25,9 @@ categories = {
             "🐝",
             "🥛",
             "Perrydell farm",
+            "Godfrey bros",
+            "Cantelope",
+            "Watermelon",
         ],
         "Eating Out": [
             "Tropical smoothie cafe",
@@ -53,8 +56,7 @@ categories = {
             "Bellas of bristol",
             "Wendy's",
             "Javateas gourmet coffe",
-            "Cantelope",
-            "Watermelon",
+            "Old town road dairy",
         ],
     },
 
@@ -130,6 +132,7 @@ categories = {
             "SAM'S FUEL",
             "Gulf oil",
             "WEIGELS",
+            "Exxon",
         ],
         "Insurance": [
             "FSI KY FARM BUREAU",
@@ -203,6 +206,7 @@ categories = {
     "Education": {
         "Debt": [
             "FIRSTMARK",
+            "DEPT EDUCATION",
         ],
     },
 
@@ -270,6 +274,7 @@ categories = {
         "Privacy Software": [
             "Anonaddy",
             "Romanius",
+            "Linode . akamai",
         ],
         "Creative Software": [
             "CANVA",
