@@ -1,6 +1,7 @@
 manual_transactions = [
     # example:
     # ["2023/04/12", "Pizza Night - Venmo to Friend", -13],
+    ["2023/11/02", "TARGET.COM * 800-591-3869 MN", -28.00],
     ["2023/09/03", "TURKEY HILL #0264 EPHRATA PA", -25.41],
     ["2023/07/19", "Thank you! (BBs Grocery) - Venmo from Brittany Culp", 10],
     ["2023/07/19", "Groceries Hillside - Venmo to Terriann Culp", -27.50],
