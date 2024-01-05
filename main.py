@@ -45,7 +45,7 @@ for tran in sorted_transactions:
 
 month = input(
     "Please enter the numerical value for " 
-    + "the month which would you like transactions for:"
+    + "the month which would you like transactions for: "
 )
 
 with open("transaction_output.txt", "w") as f:
