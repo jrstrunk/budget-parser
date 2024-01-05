@@ -161,13 +161,27 @@ def parse_venmo_transactions(raw_trans_html: str):
                 + " - Venmo from " \
                 + story_headline.replace("paidyou", "")
             mult = 1
-        else:
+        elif "Youcharged" in story_headline:
+            name = story_content \
+                + " - Venmo from " \
+                + story_headline.replace("Youcharged", "")
+            mult = 1
+        elif "chargedyou" in story_headline:
+            name = story_content \
+                + " - Venmo to " \
+                + story_headline.replace("chargedyou", "")
+            mult = -1
+        elif story_headline == "Standard Transfer Initiated":
             continue
+        else:
+            print("Venmo transaction \"" + story_headline \
+                + "\" is unrecognized, please manually investigate")
 
         if "," in name:
             name = "\"" + name + "\""
 
-        story_hidden_amount = soup.select_one("span[id^='storyHidenAmount-']").get_text(strip=True)
+        story_hidden_amount = soup.select_one("span[id^='storyHidenAmount-']")\
+            .get_text(strip=True)
         amount = float(story_hidden_amount.replace("$", "")) * mult
 
         transactions.append(
