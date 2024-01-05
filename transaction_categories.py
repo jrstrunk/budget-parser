@@ -274,6 +274,7 @@ categories = {
         "Movies": [
             "SOUTH YORK CINEMA",
             "PRIME VIDEO",
+            "Movie",
         ],
         "Games": [
             "Steamgames.com",
