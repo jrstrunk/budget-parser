@@ -35,8 +35,13 @@ def parse_sofi_banking_transactions(raw_trans_html: str):
             # cast the amount to a float
             amount = float(split_trans[2].replace("$", ""))
 
+            name = split_trans[1]
+
+            if "," in name:
+                name = "\"" + name + "\""
+
             transactions.append(
-                Transaction(date, split_trans[1], amount)
+                Transaction(date, name, amount)
             )
     return transactions
 
@@ -77,9 +82,14 @@ def parse_sofi_credit_transactions(raw_trans_html: str):
 
         date = datetime.strptime(trans_details[2], "%m/%d/%Y")
         amount = float(trans_details[1].replace("$", ""))
-            
+
+        name = trans_details[0]
+
+        if "," in name:
+            name = "\"" + name + "\""
+
         transactions.append(
-            Transaction(date, trans_details[0], amount)
+            Transaction(date, name, amount)
         )
     return transactions
 
@@ -106,7 +116,10 @@ def parse_discover_transactions(raw_trans_html: str):
         else:
             amount = "-" + amount
         amount = float(amount.replace("$", ""))
-        
+
+        if "," in name:
+            name = "\"" + name + "\""
+
         transactions.append(
             Transaction(date, name, amount)
         )
@@ -150,6 +163,9 @@ def parse_venmo_transactions(raw_trans_html: str):
             mult = 1
         else:
             continue
+
+        if "," in name:
+            name = "\"" + name + "\""
 
         story_hidden_amount = soup.select_one("span[id^='storyHidenAmount-']").get_text(strip=True)
         amount = float(story_hidden_amount.replace("$", "")) * mult
