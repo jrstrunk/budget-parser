@@ -28,6 +28,10 @@ categories = {
             "Godfrey bros",
             "Cantelope",
             "Watermelon",
+            "Dutch way farm",
+            "Wegmans",
+            "Ebenezer's",
+            "Ebenezers",
         ],
         "Eating Out": [
             "Tropical smoothie cafe",
@@ -44,7 +48,7 @@ categories = {
             "TST* WIRED CUP",
             "AUNTIEANNES",
             "PANERA BREAD",
-            "Tst* lunas",
+            "Tst\* lunas",
             "Parma pizza",
             "Sq \*molly's courtyard",
             "Pizza",
@@ -57,6 +61,12 @@ categories = {
             "Wendy's",
             "Javateas gourmet coffe",
             "Old town road dairy",
+            "Plaza azteca",
+            "Cubby's ice cream cafe",
+            "Dairy queen",
+            "findlay marke",
+            "deeper roots coffe",
+            "em's sourdough bre",
         ],
     },
 
@@ -83,6 +93,8 @@ categories = {
         ],
         "Hygiene": [
             "Ulta",
+            "Lola reproductive care",
+            "Rite aid",
         ]
     },
 
@@ -133,6 +145,7 @@ categories = {
             "Gulf oil",
             "WEIGELS",
             "Exxon",
+            "Samsclub .* gas",
         ],
         "Insurance": [
             "FSI KY FARM BUREAU",
@@ -174,6 +187,9 @@ categories = {
             "H&amp;m",
             "H&m",
             "AIORI",
+            "KOHL'S",
+            "flux footwear",
+            "J crew",
         ],
         "Home": [
             "BED BATH &amp; BEYOND",
@@ -181,6 +197,10 @@ categories = {
             "Hotel columbia collect",
             "THE HOME DEPOT",
             "Joann stores",
+            "Lowes",
+            "gray apple market",
+            "Chevy chase hardware",
+            "Wiseway supply",
         ],
         "Misc": [
             "COMMUNITYAID",
@@ -196,10 +216,14 @@ categories = {
             "BURLINGTON",
             "Hobby[\s-]lobby",
             "MICHAELS STORES",
+            "Dicks sporting goods",
+            "Dickssportinggoods.com",
+            "Books a million",
         ],
         "Office": [
             "Framework*",
             "Newegg",
+            "Fosiaudio",
         ],
     },
 
@@ -249,6 +273,7 @@ categories = {
         ],
         "Movies": [
             "SOUTH YORK CINEMA",
+            "PRIME VIDEO",
         ],
         "Games": [
             "Steamgames.com",
@@ -319,6 +344,8 @@ exclude_list = [
     "To Baby Expenses Vault",
     "To New Sneakers Vault",
     "From .* Vault",
+    "To .* Roth IRA Contribution Vault",
+    "To Discretionary Spending Vault",
     "WELLS FARGO",
     "SOFI BANK",
     "WHITAKER BANK",
@@ -341,6 +368,7 @@ exclude_list = [
     "Coinbase.com",
     "INTERNET PAYMENT - THANK YOU",
     "CASHBACK BONUS",
+    "Sofi rewards",
 ]
 
 not_on_expense_budget_list = [
