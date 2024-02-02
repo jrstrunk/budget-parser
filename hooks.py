@@ -4,10 +4,10 @@ def split_naku_income(original_transaction: Transaction):
     if not "NAKUPUNA SOLUTIO" == original_transaction.name:
         return [] # do not modify original transaction
     
-    original_transaction.amount += 13
+    original_transaction.amount += 10.50
     
     return [
-        Transaction(original_transaction.datetime, "HDS Dental Insurance", -13),
+        Transaction(original_transaction.datetime, "HDS Dental Insurance", -10.50),
         original_transaction,
     ]
 
@@ -51,6 +51,5 @@ def split_spotify_plan_gift(original_transaction: Transaction):
 
 hooks = [
     split_naku_income,
-    split_digitalocean_invoice,
-    split_rent_utilities,
+    split_spotify_plan_gift,
 ]
