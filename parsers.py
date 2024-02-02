@@ -146,7 +146,9 @@ def parse_venmo_transactions(raw_trans_html: str):
         soup = BeautifulSoup(tran, 'html.parser')
 
         days_ago = soup.find("div", {"aria-label": True}).get_text(strip=True)
-        if "d" in days_ago:
+        if "h" in days_ago or "m" in days_ago:
+            date = datetime.now()
+        elif "d" in days_ago:
             days_ago = int(days_ago[:-1])
             current_date = datetime.now()
             date = current_date - timedelta(days=days_ago + 1)
