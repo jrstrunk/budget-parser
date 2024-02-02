@@ -10,6 +10,9 @@ def parse_sofi_banking_transactions(raw_trans_html: str):
         the raw_trans_html string should start with "<tr data-mjs-value="'''
     transactions = []
 
+    if not raw_trans_html:
+        return transactions
+
     # parse the whole page down to the needed tables
     secs = raw_trans_html.split('<div class="transactions"')
     trans_sec = secs[1]
@@ -47,6 +50,9 @@ def parse_sofi_banking_transactions(raw_trans_html: str):
 
 def parse_sofi_credit_transactions(raw_trans_html: str):
     transactions = []
+
+    if not raw_trans_html:
+        return transactions
 
     posted_trans = raw_trans_html.split('data-qa="posted-transaction-item"')
     posted_trans = [t.split("</span>")[0] for t in posted_trans]
@@ -96,6 +102,9 @@ def parse_sofi_credit_transactions(raw_trans_html: str):
 def parse_discover_transactions(raw_trans_html: str):
     transactions = []
 
+    if not raw_trans_html:
+        return transactions
+
     trans_table = re.findall(r"transactionTbl[^>]*>([\s\S]*?)<\/table>", raw_trans_html)[0]
 
     # remove the first match, the column header row
@@ -127,6 +136,9 @@ def parse_discover_transactions(raw_trans_html: str):
 
 def parse_venmo_transactions(raw_trans_html: str):
     transactions = []
+
+    if not raw_trans_html:
+        return transactions
 
     trans = re.findall(r"<article[^>]*>(?:[\s\S]*?)<\/article>", raw_trans_html)
 
