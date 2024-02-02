@@ -67,6 +67,7 @@ categories = {
             "findlay marke",
             "deeper roots coffe",
             "em's sourdough bre",
+            "La Carreta",
         ],
     },
 
@@ -103,6 +104,7 @@ categories = {
             "ENTEGRO LLC", 
             "FIRSTENERGY",
             "Bundled Utilites",
+            "COLUMBIA GAS OF",
         ],
         "Internet": [
             "COMCAST", 
@@ -119,6 +121,9 @@ categories = {
             "BUTTONWOOD GARDENS",
             "Buttonwood Oper",
             "RPMANAGEMENT",
+        ],
+        "Upgrades & Repairs": [
+            "Sherwin Williams",
         ]
     },
 
@@ -126,7 +131,6 @@ categories = {
         "Gas": [
             "SHEETZ", 
             "TURKEY HILL",
-            "COLUMBIA GAS",
             "RUTTER",
             "BP#",
             "CIRCLE K",
@@ -249,6 +253,7 @@ categories = {
             "Frontier airlines",
             "Best western",
             "Airbnb",
+            "La Quinta",
         ],
     },
 
