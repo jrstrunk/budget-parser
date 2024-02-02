@@ -1,6 +1,12 @@
 manual_transactions = [
     # example:
     # ["2023/04/12", "Pizza Night - Venmo to Friend", -13],
+    ["2024/01/28", "La Quinta Hotel Room 1 Night - Transfer to Tim Strunk", -76],
+    ["2024/01/28", "La Carreta Dinner - Transfer to Tim Strunk", -13.50],
+    ["2024/01/27", "U-hual rental - Transfer to Tim Strunk", -300],
+    ["2024/01/27", '"Hillside 1 gal Milk, 1 Butter, 2 doz Eggs - Transfer to Tim Strunk"', -10.50],
+    ["2024/01/23", "PlushBeds Organic Luxury Bliss King Mattress - Cash Payment to Nathan Zimmerman", -150],
+    ["2024/01/16", "Addy.io Annual Subscription - Coinbase Crypto Payment", -38.27],
     ["2023/11/10", "INJINJI INC 402-935-7733 CA #9785", -69.20],
     ["2023/11/02", "TARGET.COM * 800-591-3869 MN", -28.00],
     ["2023/09/03", "TURKEY HILL #0264 EPHRATA PA", -25.41],
