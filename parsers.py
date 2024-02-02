@@ -111,23 +111,27 @@ def parse_discover_transactions(raw_trans_html: str):
     trans_table_rows = re.findall(r"<tr[^>]*>(?:[\s\S]*?)<\/tr>", trans_table)[1:]
 
     for trans_row in trans_table_rows:
+        if 'class="pending-transaction' in trans_row:
+            rege = r'data-date=(.*?)"'
+        else:
+            rege = r'data-date="(.*?)"'
         date = datetime.strptime(
-            re.findall(r'data-date="(.*?)"', trans_row)[0],
+            re.findall(rege, trans_row)[0],
             "%m/%d/%Y",
         )
+
         name = re.findall(r'class="merchant-name">([\s\S]*?)<', trans_row)[0]\
             .replace("\n", " ")\
             .replace("&amp;", "&")
-        amount = re.findall(r'data-amt="(.*?)"', trans_row)[0]
+        if "," in name:
+            name = "\"" + name + "\""
 
+        amount = re.findall(r'data-amt="(.*?)"', trans_row)[0]
         if "-" in amount:
             amount = amount.replace("-", "")
         else:
             amount = "-" + amount
         amount = float(amount.replace("$", ""))
-
-        if "," in name:
-            name = "\"" + name + "\""
 
         transactions.append(
             Transaction(date, name, amount)
