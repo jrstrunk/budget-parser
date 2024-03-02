@@ -1,6 +1,7 @@
 manual_transactions = [
     # example:
     # ["2023/04/12", "Pizza Night - Venmo to Friend", -13],
+    ["2024/03/01", "Champ's Barber School", -8],
     ["2024/01/28", "La Quinta Hotel Room 1 Night - Transfer to Tim Strunk", -76],
     ["2024/01/28", "La Carreta Dinner - Transfer to Tim Strunk", -13.50],
     ["2024/01/27", "U-hual rental - Transfer to Tim Strunk", -300],
