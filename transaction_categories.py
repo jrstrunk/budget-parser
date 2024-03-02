@@ -6,6 +6,7 @@ categories = {
             "ALDI", 
             "YORK GROCERY OUTLET", 
             "BBS GROCE",
+            "BBs",
             "GIANT",
             "TRADER JOE",
             "FOOD LION",
@@ -68,6 +69,7 @@ categories = {
             "deeper roots coffe",
             "em's sourdough bre",
             "La Carreta",
+            "Mosbys pub",
         ],
     },
 
@@ -150,6 +152,7 @@ categories = {
             "WEIGELS",
             "Exxon",
             "Samsclub .* gas",
+            "Conoco",
         ],
         "Insurance": [
             "FSI KY FARM BUREAU",
@@ -223,6 +226,8 @@ categories = {
             "Dicks sporting goods",
             "Dickssportinggoods.com",
             "Books a million",
+            "Community Aid",
+            "Lifepath",
         ],
         "Office": [
             "Framework*",
@@ -351,6 +356,7 @@ exclude_list = [
     "To New Sneakers Vault",
     "From .* Vault",
     "To .* Roth IRA Contribution Vault",
+    "To .* Down Payment Vault",
     "To Discretionary Spending Vault",
     "WELLS FARGO",
     "SOFI BANK",
