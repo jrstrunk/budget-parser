@@ -88,6 +88,7 @@ categories = {
         ],
         "Supplements & Drugs": [
             "CVS/PHARM",
+            "mitolife",
         ],
         "Products": [
             "WWW.CLEARLYFILTERED.CO",
@@ -98,6 +99,9 @@ categories = {
             "Ulta",
             "Lola reproductive care",
             "Rite aid",
+            "Champ's Barber School",
+            "PRIMALLY PURE",
+            "Sally beauty",
         ]
     },
 
@@ -107,6 +111,7 @@ categories = {
             "FIRSTENERGY",
             "Bundled Utilites",
             "COLUMBIA GAS OF",
+            "YORK WATER CO",
         ],
         "Internet": [
             "COMCAST", 
