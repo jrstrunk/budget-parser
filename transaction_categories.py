@@ -25,6 +25,7 @@ categories = {
             "Hillside",
             "🐝",
             "🥛",
+            "Milk",
             "Perrydell farm",
             "Godfrey bros",
             "Cantelope",
@@ -33,6 +34,8 @@ categories = {
             "Wegmans",
             "Ebenezer's",
             "Ebenezers",
+            "Beezers",
+            "Sonnewald natural food",
         ],
         "Eating Out": [
             "Tropical smoothie cafe",
@@ -70,6 +73,7 @@ categories = {
             "em's sourdough bre",
             "La Carreta",
             "Mosbys pub",
+            "Bucka bagels",
         ],
     },
 
@@ -89,6 +93,7 @@ categories = {
         "Supplements & Drugs": [
             "CVS/PHARM",
             "mitolife",
+            "cowboy colostrum",
         ],
         "Products": [
             "WWW.CLEARLYFILTERED.CO",
@@ -131,6 +136,7 @@ categories = {
         ],
         "Upgrades & Repairs": [
             "Sherwin Williams",
+            "Sunset acres nursery",
         ]
     },
 
@@ -158,6 +164,8 @@ categories = {
             "Exxon",
             "Samsclub .* gas",
             "Conoco",
+            "TOM'S ORBIT EXPRESS",
+            "Gas Sam's Club",
         ],
         "Insurance": [
             "FSI KY FARM BUREAU",
@@ -264,6 +272,7 @@ categories = {
             "Best western",
             "Airbnb",
             "La Quinta",
+            "STREET METER",
         ],
     },
 
@@ -322,6 +331,7 @@ categories = {
         ],
         "Tax Services": [
             "Intuit *turbotax",
+            "turbotax",
             "Cryptotaxcalculator.io",
         ],
         "Professional Software": [
