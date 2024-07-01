@@ -5,9 +5,11 @@ def split_naku_income(original_transaction: Transaction):
         return [] # do not modify original transaction
     
     original_transaction.amount += 10.50
+    original_transaction.amount += 29.16
     
     return [
         Transaction(original_transaction.datetime, "HDS Dental Insurance", -10.50),
+        Transaction(original_transaction.datetime, "FSA Contribution", -29.16),
         original_transaction,
     ]
 
