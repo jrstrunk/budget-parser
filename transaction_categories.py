@@ -74,6 +74,9 @@ categories = {
             "La Carreta",
             "Mosbys pub",
             "Bucka bagels",
+            "aunt lydias pretze",
+            "sweet willows crea",
+            "white hart cafe",
         ],
     },
 
@@ -94,6 +97,7 @@ categories = {
             "CVS/PHARM",
             "mitolife",
             "cowboy colostrum",
+            "blueprint.bryanjohn",
         ],
         "Products": [
             "WWW.CLEARLYFILTERED.CO",
@@ -210,6 +214,7 @@ categories = {
             "KOHL'S",
             "flux footwear",
             "J crew",
+            "American eagle outfitt",
         ],
         "Home": [
             "BED BATH &amp; BEYOND",
@@ -289,6 +294,9 @@ categories = {
         "Doctors Appt": [
             "Ws mywellspan ext",
         ],
+        "Clothing": [
+            "Carter's",
+        ],
     },
 
     "Entertainment": {
@@ -342,6 +350,7 @@ categories = {
     "Giving": {
         "Poverty": [
             "Compassion internation",
+            "Compassion INT'L",
         ]
     },
 
