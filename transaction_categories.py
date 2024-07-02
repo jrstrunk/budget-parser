@@ -25,6 +25,7 @@ categories = {
             "Hillside",
             "🐝",
             "🥛",
+            "🍼",
             "Milk",
             "Perrydell farm",
             "Godfrey bros",
@@ -77,6 +78,9 @@ categories = {
             "aunt lydias pretze",
             "sweet willows crea",
             "white hart cafe",
+            "Willow street restaura",
+            "Tst* grand central bag",
+            "Tst* viet thai cafe",
         ],
     },
 
@@ -141,7 +145,9 @@ categories = {
         "Upgrades & Repairs": [
             "Sherwin Williams",
             "Sunset acres nursery",
-        ]
+        ],
+        "Maintenance": [
+        ],
     },
 
     "Transportation": {
@@ -344,6 +350,9 @@ categories = {
         ],
         "Professional Software": [
             "Chatgpt subscription",
+            "Supermaven inc.",
+        ],
+        "Professional": [
         ]
     },
 
