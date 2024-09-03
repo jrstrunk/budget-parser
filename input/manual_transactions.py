@@ -1,6 +1,10 @@
 manual_transactions = [
     # example:
     # ["2023/04/12", "Pizza Night - Venmo to Friend", -13],
+    ["2024/08/26", "CHICK-FIL-A #03017 YORK PA", -10.81],
+    ["2024/08/24", "AMAZON MKTPLACE PMTS AMZN.COM/BILLWA 5IK7J3KHDGO", 14.19],
+    ["2024/08/23", "ALDI 71080 YORK PA", -64.62],
+    ["2024/08/20", "WALMART STORE 01529 YORK PA", -39.84],
     ["2024/03/01", "Champ's Barber School", -8],
     ["2024/01/28", "La Quinta Hotel Room 1 Night - Transfer to Tim Strunk", -76],
     ["2024/01/28", "La Carreta Dinner - Transfer to Tim Strunk", -13.50],
